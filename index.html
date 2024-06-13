@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jason Philosophy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+</head>
+<body>
+
+<div class="screen">
+
+    <div class="settings">
+
+        <div class="text">
+
+            <div class="options">
+                <button class="add-text">
+                    <i class="bx bx-plus"></i>
+                </button>
+
+                <button class="remove-text">
+                    <i class="fa fa-remove"></i>
+                </button>
+            </div>
+
+            <label>
+                <textarea cols="40" rows="5" class="text-input"></textarea>
+            </label>
+
+        </div>
+
+
+        <div class="options">
+
+            <div class="text-font-menu">
+                <div class="selected-font">
+                    <a>
+                        <a class="current-font">Font</a>
+                    </a>
+
+                    <i class="bx bx-chevron-down" id="arrow"></i>
+                </div>
+
+                <div class="dropdown"></div>
+            </div>
+
+            <div class="text-alignment">
+
+                <div class="text-alignment-button">
+                    <img src="icons/icon-align-start.png" alt="align start" class="selected-alignment">
+                    <i class="bx bx-chevron-down"></i>
+                </div>
+
+                <div class="text-alignment-options">
+                    <img src="icons/icon-align-start.png" alt="align start" id="start">
+                    <img src="icons/icon-align-center.png" alt="align center" id="center">
+                    <img src="icons/icon-align-end.png" alt="align end" id="end">
+                </div>
+
+            </div>
+
+            <div class="text-rotation">
+                <div class="data">
+                    <img src="icons/icon-angle.png" alt="Angle">
+                    <i class="bx bx-chevron-down"></i>
+                </div>
+
+                <div class="rotation">
+                    <label>
+                        <input type="range" min="0" max="360" value="0" class="slider">
+                    </label>
+
+                    <label>
+                        <input type="number" min="0" max="360" value="0" class="rotation-input">
+                    </label>
+
+                    <!--                    <p class="value">0</p>-->
+                </div>
+            </div>
+
+            <div class="text-size">
+                <!--                <p>Text size</p>-->
+
+                <div class="text-size-button">
+                    <img src="icons/icon-text-size.png" alt="text size">
+                    <i class="bx bx-chevron-down"></i>
+                </div>
+
+
+                <label>
+                    <input type="number" min="1" value="16" oninput="validity.valid||(value='');" class="input">
+                </label>
+            </div>
+
+            <div class="text-appearance">
+                <div class="options">
+                    <i class="fa fa-bold" id="bold"></i>
+                    <i class="fa fa-italic" id="italic"></i>
+                    <i class="fa fa-underline" id="underline"></i>
+                </div>
+            </div>
+
+
+            <div class="text-color">
+                <u style="font-weight: bold">A</u>
+
+                <label>
+                    <input type="color">
+                </label>
+            </div>
+
+            <div class="text-stroke">
+                <img src="icons/icon-no-stroke.png" alt="Stroke">
+            </div>
+
+            <div class="text-alpha">
+                <div class="data">
+                    <img src="icons/icon-opacity.png" alt="Opacity">
+                    <i class="bx bx-chevron-down"></i>
+                </div>
+
+                <div class="alpha-dropdown">
+                    <label>
+                        <input type="range" min="0" max="100" value="100" class="slider">
+                    </label>
+
+                    <p class="value">100</p>
+                </div>
+
+            </div>
+
+            <div class="text-background">
+                <div class="button">
+                    <p>&#9639;</p>
+                </div>
+
+
+                <div class="options">
+
+                    <div class="has-background">
+                        <label>
+                            <input type="checkbox" class="has-text-background">
+                        </label>
+
+                        <div class="text-background-color">
+
+                            <label>
+                                <input type="color">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="alpha">
+                        <div class="data">
+                            <img src="icons/icon-opacity.png" alt="Background alpha">
+                            <i class="bx bx-chevron-down"></i>
+                        </div>
+
+                        <div class="alpha-dropdown">
+                            <label>
+                                <input type="range" min="0" max="100" value="100" class="slider">
+                            </label>
+
+                            <p class="value">100</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <canvas>Canvas</canvas>
+</div>
+
+<div class="controls">
+    <div class="row">
+        <input type="file" class="file-input" accept="image/*" hidden>
+        <button class="generate-meme">Generate</button>
+        <button class="choose-img">Choose Image</button>
+        <button class="save-img">Save Image</button>
+    </div>
+</div>
+
+<div class="jason-gallery">
+    <img src="jason/jason.jpg" alt="jason/jason.jpg" id="jason/jason.jpg">
+    <img src="jason/jason1.jpg" alt="jason/jason1.jpg" id="jason/jason1.jpg">
+    <img src="jason/jason2.jpg" alt="jason/jason2.jpg" id="jason/jason2.jpg">
+    <img src="jason/jason3.jpg" alt="jason/jason3.jpg" id="jason/jason3.jpg">
+    <img src="jason/jason4.jpg" alt="jason/jason4.jpg" id="jason/jason4.jpg">
+    <img src="jason/jason5.jpg" alt="jason/jason5.jpg" id="jason/jason5.jpg">
+</div>
+
+<script type="module" src="index.js"></script>
+
+</body>
+</html>
