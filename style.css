@@ -1,0 +1,435 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background: #D3D3D3;
+}
+
+
+.controls button {
+    color: #fff;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 11px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.controls .generate-meme {
+    background-color: red;
+    border: 1px solid red;
+}
+
+.controls .choose-img {
+    background: #6C757D;
+    border: 1px solid #6C757D;
+}
+
+.controls .save-img {
+    background: #5372F0;
+    border: 1px solid #5372F0;
+}
+
+canvas {
+    margin-left: 50px;
+}
+
+.screen {
+    display: flex;
+    padding: 10px;
+
+    justify-content: left;
+
+    flex-direction: column;
+
+    align-items: center;
+    border: 2px green solid;
+
+    min-height: 30vh;
+
+    max-width: 80vw;
+}
+
+.screen .settings{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.screen .settings > .options {
+    width: 800px;
+    display: flex;
+
+    background: white;
+
+    margin-top: 6px;
+    margin-bottom: 10px;
+
+    padding: 0 10px;
+
+    justify-content: space-between;
+
+    flex-direction: row;
+    align-items: center;
+
+    /*border: 1px solid red;*/
+}
+
+.canvas-container {
+    background: white;
+}
+
+
+/*.canvas-container {
+    min-height: 100px;
+    min-width: 100px;
+    background: white;
+}*/
+
+
+.screen canvas {
+    border: 1px solid black;
+    background: white;
+}
+
+@media screen and(max-width: 600px) {
+    .controls button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .controls .row {
+        width: 100%;
+    }
+
+    .controls .row .save-img {
+        margin-left: 0;
+    }
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    /*flex-direction: column;*/
+    /*justify-content: start;*/
+}
+
+.text textarea {
+    border: 1px solid blue;
+    resize: none;
+}
+
+.text .options {
+    display: flex;
+    align-content: start;
+    flex-direction: column;
+}
+
+.text-rotation {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-rotation img {
+    width: 24px;
+    height: 24px;
+}
+
+.text-rotation .rotation {
+    display: none;
+    position: absolute;
+    margin-top: 24px;
+
+    width: 220px;
+    padding: 4px 0;
+
+    border: 1px solid gray;
+    border-radius: 6px;
+    background-color: #D3D3D3;
+}
+
+.text-rotation .rotation.shown {
+    display: block;
+    position: absolute;
+}
+
+.text-rotation .data {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.text-rotation .data:hover {
+    cursor: pointer;
+}
+
+.text-size img {
+    width: 16px;
+}
+
+.text-size input {
+    display: none;
+    width: 48px;
+    position: absolute;
+}
+
+.text-size .text-size-button:hover {
+    width: 36px;
+    cursor: pointer;
+}
+
+.text-size input.shown {
+    display: flex;
+}
+
+.text-appearance {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-appearance .options {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+
+.text-appearance i {
+    width: 32px;
+    height: 16px;
+    color: gray;
+}
+
+.text-appearance > i:nth-child(3) {
+    margin-top: 1px;
+}
+
+.text-appearance i.checked {
+    color: black;
+}
+
+.text-appearance i:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.options .text-alignment-button {
+    display: flex;
+    width: 36px;
+}
+
+.options .text-alignment img {
+    width: 16px;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.options .text-alignment-options {
+    display: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    background-color: #D3D3D3;
+}
+
+.options .text-alignment-options.shown {
+    position: absolute;
+    display: flex;
+}
+
+.options .text-alignment-button:hover {
+    cursor: pointer;
+}
+
+.options .text-alignment .text-alignment-options img:hover {
+    background: dimgray;
+}
+
+.options .text-stroke {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options .text-stroke img {
+    width: 16px;
+    height: 16px;
+}
+
+.options .text-stroke:hover {
+    cursor: pointer;
+}
+
+.options .text-alpha {
+    width: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.options .text-alpha:hover {
+    cursor: pointer;
+}
+
+.options .text-alpha .alpha-dropdown {
+    display: none;
+    align-items: center;
+
+    width: 168px;
+    height: 40px;
+
+    margin-top: 16px;
+
+    position: absolute;
+
+    background-color: #D3D3D3;
+
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+
+.options .text-alpha .alpha-dropdown.shown {
+    display: flex;
+}
+
+.options .text-alpha img {
+    width: 16px;
+    height: 16px;
+}
+
+.options .text-alpha .data {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.text-font-menu .fonts {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.text-font-menu .selected-font {
+    width: 100px;
+}
+
+.text-font-menu .dropdown {
+    width: 200px;
+    max-height: 200px;
+    overflow-y: scroll;
+    margin-top: 0.3rem;
+    border: 1px solid black;
+
+    background: white;
+    display: none;
+
+    border-radius: 3px;
+    position: absolute;
+}
+
+.text-font-menu .dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    column-gap: 500px;
+}
+
+.text-font-menu .selected-font:hover {
+    cursor: pointer;
+}
+
+.text-font-menu .dropdown a:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+.arrow {
+    transform: rotate(180deg);
+    transition: 0.2s ease;
+}
+
+.options .text-color img {
+    color: red;
+}
+
+.options .text-color input {
+    max-width: 0;
+    max-height: 0;
+    visibility: hidden;
+}
+
+.options .text-color u:hover {
+    cursor: pointer;
+}
+
+.text-background .button:hover {
+    cursor: pointer;
+}
+
+
+.text-background .options {
+    display: none;
+
+    margin-top: -18px;
+    position: absolute;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 4px;
+    background-color: #D3D3D3;
+}
+
+.text-background .options.shown{
+    display: block;
+}
+
+.options .text-background .has-background{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+.options .text-background .alpha .data {
+    display: flex;
+    justify-content: start;
+
+    width: 16px;
+}
+
+.options .text-background .alpha .data:hover {
+    cursor: pointer;
+}
+
+.options .text-background .alpha-dropdown {
+    display: none;
+    align-items: center;
+    position: absolute;
+    width: 168px;
+    height: 40px;
+
+    background: #D3D3D3;
+    border-radius: 6px;
+    border: 1px solid gray;
+}
+
+.options .text-background .alpha-dropdown.shown {
+    display: flex;
+}
+
+.options .text-background .alpha img {
+    width: 16px;
+    height: 16px;
+}
+
+.jason-gallery {
+    background-color: white;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.jason-gallery img {
+    height: 100px;
+}
